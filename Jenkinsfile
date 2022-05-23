@@ -18,12 +18,14 @@ pipeline {
                 }
             }
             steps {
-                sh 'docker stop ${name_final}'
+                scripts {
+                    sh 'docker stop ${name_final}'
+                }
             }
         }
 
         stage('build') {
-            step {
+            steps {
                 script {
                     sh '''docker build . -t ${name_imagen}:${tag_imagen}'''
                 }
@@ -31,7 +33,7 @@ pipeline {
         }
 
         stage('run') {
-            step {
+            steps {
                 script {
                     sh ' docker run -dtp ${puerto_imagen}:80 --name ${name_final} ${name_imagen}:${tag_imagen}'
                 }
