@@ -19,7 +19,9 @@ pipeline {
             }
             steps {
                 scripts {
-                    sh 'docker stop ${name_final}'
+                    sh '''
+                        docker stop ${name_final}
+                    '''
                 }
             }
         }
