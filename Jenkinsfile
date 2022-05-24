@@ -12,7 +12,7 @@ pipeline {
     stages {
         stage('test') {
             steps {
-                sh 'echo hola'
+                sh 'docker ps'
             }
         }
 
