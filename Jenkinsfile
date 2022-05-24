@@ -12,7 +12,7 @@ pipeline {
     stages {
         stage('test') {
             steps {
-                sh 'docker ps'
+                powershell 'docker ps'
             }
         }
 
