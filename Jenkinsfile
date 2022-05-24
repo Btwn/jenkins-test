@@ -35,7 +35,7 @@ pipeline {
         stage('build') {
             steps {
                 script {
-                    sh '''docker build . -t ${name_imagen}:${tag_imagen}'''
+                    powershell '''docker build . -t ${name_imagen}:${tag_imagen}'''
                 }
             }
         }
@@ -43,7 +43,7 @@ pipeline {
         stage('run') {
             steps {
                 script {
-                    sh ' docker run -dtp ${puerto_imagen}:80 --name ${name_final} ${name_imagen}:${tag_imagen}'
+                    powershell ' docker run -dtp ${puerto_imagen}:80 --name ${name_final} ${name_imagen}:${tag_imagen}'
                 }
             }
         }
