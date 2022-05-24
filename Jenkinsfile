@@ -10,6 +10,12 @@ pipeline {
         name_final = "${name_container}${tag_imagen}${puerto_imagen}"
     }
     stages {
+        stage('test') {
+            steps {
+                sh 'echo hola'
+            }
+        }
+
         // stage('stop/rm') {
         //     // when {
         //     //     expression {
