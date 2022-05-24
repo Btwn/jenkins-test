@@ -35,6 +35,7 @@ pipeline {
         stage('build') {
             steps {
                 script {
+                    echo 'docker build -t ${name_imagen}:${tag_imagen} .'
                     powershell 'docker build -t ${name_imagen}:${tag_imagen} .'
                 }
             }
